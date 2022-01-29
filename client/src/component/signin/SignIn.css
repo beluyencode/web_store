@@ -1,0 +1,101 @@
+.dialog {
+    display: block; 
+    position: fixed; 
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+div[disabled] {
+    display : none !important;
+}
+.dialog-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    height : 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.margin-auto {
+    text-align: center;
+}
+.dialog-label {
+    font-size: 30px;
+}
+.img-tichxanh {
+    width: 120px;
+    height: 120px;
+    background-image: url(http://localhost:5000/img/tick-xanh.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: auto;
+}
+@media only screen and (max-width: 1224px) {
+    .dialog-content{
+        height : 270px !important;
+    }
+    .dialog-label {
+        font-size: 24.5px !important;
+    }
+   
+}
+@media only screen and (max-width: 1049px) {
+    .dialog-content{
+        width: 50% !important;
+        height : 290px !important;
+    }
+    .dialog-label {
+        font-size: 25px !important;
+    }
+    
+}
+@media only screen and (max-width: 800px) {
+    .dialog-content{
+        width: 70% !important;
+        height : 250px !important;
+
+    }
+    .dialog-label {
+        font-size: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .dialog-content{
+        width: 90% !important;
+        height : 200px !important;
+
+    }
+    .dialog-label {
+        font-size: 15px !important;
+    }
+    .img-tichxanh {
+        width: 90px;
+        height: 90px;   
+    }
+    .btn-return-login {
+        width: 60% !important;
+        margin-top: 10px !important;
+        font-size: 11px;
+    }
+}
+.btn-return-login {
+    border:none;
+    background-color: #4CAF50;
+    color : #fff;
+    width:80%;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+}

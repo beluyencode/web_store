@@ -1,0 +1,33 @@
+.home {
+    margin-top: 56px;
+    text-align: center;
+
+}
+.user-navbar{
+    color: white;
+    padding-right: 10px;
+}
+.user-navba a {
+    color: white;
+    text-decoration: none;
+}
+.loginLink {
+    color: white;
+    text-decoration: none;
+}
+.loginLink:hover{
+    text-decoration: underline;
+    color: white;
+}
+.mainHome {
+    padding-top: 30px;
+    width: 90%;
+    margin: auto;
+    display :flex;
+    flex-flow: row wrap;
+}
+.activeNavbaritem:active {
+    color: #1e2125;
+    background-color: #e9ecef;
+}
+

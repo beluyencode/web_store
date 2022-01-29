@@ -1,0 +1,30 @@
+.card-product{
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 30px;
+    width: 25%;
+    background-color: white;
+}
+.card-product img {
+    width:100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card-product{
+        width: 33.333333%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .card-product{
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .card-product{
+        width: 90% !important;
+    }
+}

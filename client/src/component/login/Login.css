@@ -1,0 +1,115 @@
+.login-form{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: rgb(31, 30, 30);
+}
+.center-screen{
+    width: 40%;
+   
+}
+.form-tt {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+    .center-screen{
+        width: 50% !important;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .center-screen{
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .center-screen{
+        width: 90% !important;
+    }
+}
+.alert{
+    width: 100% ;
+    background-color: #f44336;
+    margin-bottom: 10px;
+    color : #fff;
+    text-align: left;
+    margin-top: 10px;
+    padding: 10px;
+}
+.alert:disabled{
+    display: none!important;
+}
+.alert span {
+
+    font-size: 13px;
+
+}
+
+.label-login-signin{
+    font-size: 30px;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    padding-bottom: 10px;
+}
+.input-login-signin {
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding : 10px 20px;
+    width: 100%;
+    border-radius: 25px;
+    border :none;
+}
+.input-login-signin:focus-visible {
+    outline: none;
+    border : 2px solid rgb(88, 86, 86);
+}
+
+
+.btn-login-signin {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.2;
+    padding: 0 20px;
+    min-width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    outline: 0;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.btn-login-signin:hover {
+    font-weight:700;
+}
+#checkbox {
+    display: inline-block;
+    margin-right: 10px;
+}
+.checkbox-text {
+    color: #fff;
+}
+.link-forget-password {
+    color: #fff;
+    text-decoration: none;
+}
+.link-forget-password:hover {
+    color: #fff;
+    text-decoration: underline;
+}

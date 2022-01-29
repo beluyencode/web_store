@@ -1,0 +1,23 @@
+.btn-dropdown {
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+    border :none;
+    color: white;
+}
+.btn-dropdown:hover {
+    color: white;
+}
+.btn-dropdown:focus {
+    color: white;
+}
+
+.dropdown-content {
+    position: absolute;
+    top : 35px;
+    right: -10px;
+    text-align: left;
+    display: block;    
+}
+.notification-dot{
+    margin-left: 10px;
+    background-color: #e61c30;
+}
