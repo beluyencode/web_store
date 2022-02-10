@@ -36,7 +36,6 @@ export default function Login() {
                 userName: userName,
                 password: password
             }
-
             var header = {
                 method: "POST",
                 headers: {

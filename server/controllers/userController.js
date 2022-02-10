@@ -5,14 +5,39 @@ class User {
     getUser(req, res) {
         let findUser = db.db.find(user => user.userName === req.user.userName);
         let user = {
-            message : "successful",
-            user :{
+            message: "successful",
+            user: {
                 name: findUser.name,
                 userName: findUser.userName,
-                cart : findUser.cart
+                cart: findUser.cart
             }
         }
         res.json(user);
+    }
+
+    getCart(req, res) {
+        let user = db.db.find(user => user.userName === req.user.userName);
+        let product = [];
+        user.cart.map(item => {
+            let p = db.product.find(product => {
+                return product.id === item;
+            });
+            product.push(p);
+        })
+        res.json(product);
+    }
+
+    removeProductFromCart(req, res) {
+        let user = db.db.find(user => user.userName === req.user.userName);
+        user.cart = user.cart.filter(id => id !== req.body.id);
+        let product = [];
+        user.cart.map(item => {
+            let p = db.product.find(product => {
+                return product.id === item;
+            });
+            product.push(p);
+        })
+        res.json(product);
     }
 
     login(req, res) {
@@ -24,10 +49,10 @@ class User {
                 name: findUser.name,
                 userName: findUser.userName
             }
-            const token = jwt.sign(user, process.env.jwtSignature, { expiresIn: "1m" });
-            res.json({ message:"successful", token: token });
+            const token = jwt.sign(user, process.env.jwtSignature, { expiresIn: "24h" });
+            res.json({ message: "successful", token: token });
         } else {
-            res.json({message: 'error',contentError : "Tài khoản hoặc mật khẩu không đúng"});
+            res.json({ message: 'error', contentError: "Tài khoản hoặc mật khẩu không đúng" });
         }
     }
 
@@ -36,13 +61,27 @@ class User {
             return user.userName === req.body.userName;
         });
         if (findUserName) {
-            res.json({message: 'error',contentError : "Tài khoản đã tồn tại"});
-        }else {
+            res.json({ message: 'error', contentError: "Tài khoản đã tồn tại" });
+        } else {
             req.body.cart = [];
             db.db.push(req.body);
             console.log(db.db);
-            res.json({message: 'successful'});
+            res.json({ message: 'successful' });
         }
+    }
+
+    addProductToCart(req, res) {
+        let user = db.db.find(user => user.userName === req.user.userName);
+        user.cart.push(req.body.id);
+        let userAfterUpdate = {
+            message: "successful",
+            user: {
+                name: user.name,
+                userName: user.userName,
+                cart: user.cart
+            }
+        }
+        res.send(JSON.stringify(userAfterUpdate));
     }
 
 }

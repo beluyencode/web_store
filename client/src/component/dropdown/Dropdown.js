@@ -19,7 +19,7 @@ export default function Dropdown(props) {
             <button onClick={onClick} className="btn-dropdown" >{props.user.name}</button>
             <div className="dropdown-menu  dropdown-content" disabled={disabled}>
                 <a href="/" className="dropdown-item activeNavbaritem">Trang cá nhân</a>
-                <a href="/" className="dropdown-item activeNavbaritem">
+                <a href="/cart" className="dropdown-item activeNavbaritem">
                     Giỏ hàng
                     {props.user.cart.length > 0 &&
                         <span className="badge notification-dot">

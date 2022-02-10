@@ -14,7 +14,7 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link " aria-current="page" href="/">Home</a>
+                                <a className="nav-link " aria-current="page" href="/">Trang chủ</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link " href="/">Hot</a>
@@ -30,18 +30,18 @@ export default function Navbar(props) {
                                     <li><a className="dropdown-item activeNavbaritem" href="/">Something else here</a></li>
                                 </ul>
                             </li>
-                            <form className="d-flex">
+                            {/* <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success" type="button">Search</button>
-                            </form>
+                            </form> */}
                         </ul>
                         <div className="user-navbar">
                             {props.user ?
                                 <Dropdown user={props.user}/>:
                                 <div>
-                                    <a className="loginLink" href="/login">login</a>
+                                    <a className="loginLink" href="/login">Đăng nhập</a>
                                     <span style={{paddingLeft:5,paddingRight:5}}>/</span>
-                                    <a className="loginLink" href="/signin">sign up</a>
+                                    <a className="loginLink" href="/signin">Đăng ký</a>
                                 </div>
                             }
                         </div>

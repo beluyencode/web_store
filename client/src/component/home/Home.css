@@ -25,6 +25,7 @@
     margin: auto;
     display :flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 .activeNavbaritem:active {
     color: #1e2125;

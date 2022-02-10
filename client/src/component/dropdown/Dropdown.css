@@ -21,3 +21,9 @@
     margin-left: 10px;
     background-color: #e61c30;
 }
+@media only screen and (max-width: 990px) {
+    .dropdown-content {
+        width: 100%;
+        
+    }
+}

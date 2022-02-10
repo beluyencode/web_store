@@ -27,7 +27,6 @@ function App() {
         .then(data => {
           if (data.message === "successful") {
             setUser(data.user);
-            console.log(data);
           }
           if (data.message === "error") {
             localStorage.removeItem("verifyToken");
@@ -46,7 +45,7 @@ function App() {
       <div className="App">
         <Navbar user={user} />
       </div>
-      <Outlet />
+      <Outlet context={[setUser]} />
     </>
   );
 }

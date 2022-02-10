@@ -1,0 +1,65 @@
+.cart-card {
+    margin: auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    width: 70%;
+    border-radius: 25px;
+    border: 0.5px solid rgb(95, 94, 94);
+    background-color: #fff;
+    display : flex;
+    justify-content: space-between;
+}
+.cart-card img {
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+}
+.btn-remove-card{
+    border:none;
+    background-color: #fff;
+    margin-top:5px;
+}
+.btn-remove-card:hover {
+    font-size: 18px;
+}
+input[type=checkbox]
+{
+    margin-top:10px;
+    margin-left: 5px;
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    transform: scale(2);
+    padding: 10px;
+}
+
+
+@media only screen and (max-width: 605px) {
+    .cart-card img {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 526px) {
+    .cart-card img {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media only screen and (max-width: 455px) {
+    .cart-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+@media only screen and (max-width: 385px) {
+    .cart-card img {
+        width: 70px;
+        height: 70px;
+    }
+    .cart-card {
+        width: 240px;
+    }
+}
