@@ -8,7 +8,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 app.use(express.static("public"));
-app.use(cors({ origin: 'http://localhost:3000'}));
+app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
