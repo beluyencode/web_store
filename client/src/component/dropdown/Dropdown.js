@@ -16,7 +16,14 @@ export default function Dropdown(props) {
 
     return (
         <div className="dropdown">
-            <button onClick={onClick} className="btn-dropdown" >{props.user.name}</button>
+            <button onClick={onClick} className="btn-dropdown" >
+                {props.user.name}
+                {(props.user.cart.length > 0 || props.user.order.length > 0) &&
+                    <span className="badge notification-dot" style={{ marginLeft: 4 }}>
+                        {props.user.order.length + props.user.cart.length}
+                    </span>
+                }
+            </button>
             <div className="dropdown-menu  dropdown-content" disabled={disabled}>
                 <a href="/" className="dropdown-item activeNavbaritem">Trang cá nhân</a>
                 <a href="/cart" className="dropdown-item activeNavbaritem">
@@ -25,7 +32,7 @@ export default function Dropdown(props) {
                         <span className="badge notification-dot">
                             {props.user.cart.length}
                         </span>
-                    }    
+                    }
                 </a>
                 <a href="/order" className="dropdown-item activeNavbaritem">
                     Đơn hàng

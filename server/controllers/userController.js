@@ -87,15 +87,22 @@ class User {
     }
 
     order(req, res) {
+        let date = new Date();
+        let time = date.getHours() + ':' + date.getMinutes();
         db.order.push({
             user : req.user,
             product : req.body.product,
-            price : req.body.totalPrice
+            price : req.body.totalPrice,
+            date : date.toLocaleDateString(),
+            time :time
+
         })
         let findUser = db.db.find(user => user.userName === req.user.userName);
         findUser.order.push({
             product : req.body.product,
-            price : req.body.totalPrice
+            price : req.body.totalPrice,
+            date : date.toLocaleDateString(),
+            time : time
         });
         let arr = [...findUser.cart];
         findUser.cart.forEach((cart,index) => {

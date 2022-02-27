@@ -4,7 +4,7 @@ import "./CartCard.css";
 export default function CartCard(props) {
 
     const handleOnChangeCheckBox = (e) => {
-       props.onChangeCheckBox(e.target.checked,props.index);
+        props.onChangeCheckBox(e.target.checked, props.index);
     }
 
     const handleonClickRemoveCard = () => {
@@ -35,22 +35,26 @@ export default function CartCard(props) {
     return (
         <div className="cart-card">
             <div style={{ padding: 10, display: 'flex' }}>
-            <input type="checkbox" onChange={handleOnChangeCheckBox}/>
+                {props.isCard &&
+                    <input type="checkbox" onChange={handleOnChangeCheckBox} />
+                }
                 <div>
                     <img src="http://localhost:5000/img/product.jpg" alt="" />
                 </div>
                 <div className="info_product">
                     <div>
                         <p>{props.product.name_product}</p>
-                        <p>{props.product.price.toLocaleString()}đ</p>
+                        <p>{props.product.price.toLocaleString()} đ</p>
                     </div>
                 </div>
             </div>
-            <div style={{ marginRight: 15 }}>
-                <div >
-                    <button className="btn-remove-card" onClick={handleonClickRemoveCard}>X</button>
+            {props.isCard &&
+                <div style={{ marginRight: 15 }}>
+                    <div >
+                        <button className="btn-remove-card" onClick={handleonClickRemoveCard}>X</button>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     );
 }

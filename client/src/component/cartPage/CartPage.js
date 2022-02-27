@@ -123,7 +123,7 @@ export default function CartPage(props) {
                 <div>
                     <div className="cartpage">
                         {cartProduct.map((cartProduct, index) => {
-                            return <CartCard key={index} index={index} onChangeCheckBox={handleOnChangeCheckBox} changeCartProduct={changeCartProduct} product={cartProduct} />
+                            return <CartCard key={index} index={index} isCard = {true} onChangeCheckBox={handleOnChangeCheckBox} changeCartProduct={changeCartProduct} product={cartProduct} />
                         })}
                     </div>
                     <div className="payment">
