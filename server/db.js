@@ -4,15 +4,18 @@ module.exports.db = [
           userName: 'longlc956',
           password: "123456",
           email: 'meolong2002@gmail.com',
-          cart: []
+          cart: [],
+          order : []
      }, {
           name: 'longlc',
           userName: 'longlc2002',
           password: "123456",
           email: 'meolong2002@gmail.com ',
-          cart: []
+          cart: [],
+          order : []
      }
 ]
+module.exports.order = [];
 module.exports.product = [{
      id: 1,
      name_product: 'vgillan0',

@@ -25,9 +25,16 @@ export default function Dropdown(props) {
                         <span className="badge notification-dot">
                             {props.user.cart.length}
                         </span>
+                    }    
+                </a>
+                <a href="/order" className="dropdown-item activeNavbaritem">
+                    Đơn hàng
+                    {props.user.order.length !== 0 &&
+                        <span className="badge notification-dot">
+                            {props.user.order.length}
+                        </span>
                     }
                 </a>
-                <a href="/" className="dropdown-item activeNavbaritem">Đơn hàng</a>
 
                 <hr className="dropdown-divider" />
                 <button className="dropdown-item activeNavbaritem" onClick={logout}>Đăng xuất</button>

@@ -3,6 +3,10 @@ import "./CartCard.css";
 
 export default function CartCard(props) {
 
+    const handleOnChangeCheckBox = (e) => {
+       props.onChangeCheckBox(e.target.checked,props.index);
+    }
+
     const handleonClickRemoveCard = () => {
         var body = {
             token: localStorage.getItem("verifyToken"),
@@ -31,7 +35,7 @@ export default function CartCard(props) {
     return (
         <div className="cart-card">
             <div style={{ padding: 10, display: 'flex' }}>
-            <input type="checkbox"/>
+            <input type="checkbox" onChange={handleOnChangeCheckBox}/>
                 <div>
                     <img src="https://vanhoadoanhnghiepvn.vn/wp-content/uploads/2020/08/112815953-stock-vector-no-image-available-icon-flat-vector.jpg" alt="" />
                 </div>

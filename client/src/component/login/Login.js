@@ -20,7 +20,7 @@ export default function Login() {
     }
 
 
-    const onClick = () => {
+    const handleOnClickLogin = () => {
         if (userName === "" || password === "") {
             setAlert({
                 content: "tài khoản và mật khẩu không được bỏ chống",
@@ -28,7 +28,7 @@ export default function Login() {
             });
         }else if(userName.includes(" ")) {
             setAlert({
-                content: "tài khoản không được có khoảng trắng",
+                content: "tài khoản không được có khoảng    trắng",
                 display: { display: "block" }
             });
         }else {
@@ -66,10 +66,16 @@ export default function Login() {
         }
     }
 
+    const handleKeyPress = (e) => {
+        if (e.charCode === 13) {
+            handleOnClickLogin();
+        }
+    }
+
 
     return (
         <>
-            <div className="login-form">
+            <div className="login-form" onKeyPress={(e) => handleKeyPress(e)}>
                 <div className="form-tt">
                     <div className="center-screen">
                         <span className="label-login-signin">Đăng nhập</span>
@@ -94,7 +100,7 @@ export default function Login() {
                         <span style={{ color: "#fff" }}>Bạn chưa có tài khoản ? </span>
                         <a href="/signin" className="link-forget-password">Đăng ký</a>
                         <button className="btn-login-signin"
-                            type="button" onClick={onClick}>
+                            type="button" onClick={handleOnClickLogin}>
                             Đăng nhập
                         </button>
                         <a href="/" className="link-forget-password">Quên mật khẩu</a>

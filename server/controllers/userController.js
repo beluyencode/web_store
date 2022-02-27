@@ -9,7 +9,8 @@ class User {
             user: {
                 name: findUser.name,
                 userName: findUser.userName,
-                cart: findUser.cart
+                cart: findUser.cart,
+                order: findUser.order
             }
         }
         res.json(user);
@@ -78,10 +79,39 @@ class User {
             user: {
                 name: user.name,
                 userName: user.userName,
-                cart: user.cart
+                cart: user.cart,
+                order: user.order
             }
         }
         res.send(JSON.stringify(userAfterUpdate));
+    }
+
+    order(req, res) {
+        db.order.push({
+            user : req.user,
+            product : req.body.product,
+            price : req.body.totalPrice
+        })
+        let findUser = db.db.find(user => user.userName === req.user.userName);
+        findUser.order.push({
+            product : req.body.product,
+            price : req.body.totalPrice
+        });
+        let arr = [...findUser.cart];
+        findUser.cart.forEach((cart,index) => {
+            req.body.product.forEach(product => {
+                if (cart === product.id) {
+                    delete findUser.cart[index];
+                }
+            })
+        })
+        findUser.cart = findUser.cart.filter(cart => {return cart !== null});
+        res.json({messages: "successful"});
+    }
+
+    getOrder(req, res) {
+        let findUser = db.db.find(user => user.userName === req.user.userName);
+        res.json({messages: "successful", order: findUser.order});
     }
 
 }
