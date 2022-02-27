@@ -37,7 +37,7 @@ export default function CartCard(props) {
             <div style={{ padding: 10, display: 'flex' }}>
             <input type="checkbox" onChange={handleOnChangeCheckBox}/>
                 <div>
-                    <img src="https://vanhoadoanhnghiepvn.vn/wp-content/uploads/2020/08/112815953-stock-vector-no-image-available-icon-flat-vector.jpg" alt="" />
+                    <img src="http://localhost:5000/img/product.jpg" alt="" />
                 </div>
                 <div className="info_product">
                     <div>
